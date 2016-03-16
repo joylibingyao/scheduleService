@@ -1,0 +1,13 @@
+<div ng-Controller="Review" class="container-fluid">
+
+	<h3>Add your Review</h3>
+	<form class="form-inline" class="container-fluid" id="review_form">
+		<div class="form-group">
+			<div class="col-sm-12">
+				Review: <textarea class="materialize-textarea" ng-model="review.review"></textarea>
+				Give a Rating (Scale: 1-5) <input type="number" ng-model="review.rating">
+				<button class="btn light-green darken1" ng-click="addReview()">Add Review</button>
+			</div>
+		</div>
+	</form>
+</div>

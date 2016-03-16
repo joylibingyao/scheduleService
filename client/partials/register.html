@@ -1,0 +1,52 @@
+<div ng-controller="FriendsController">
+
+<h3 class="center">Register
+</h3>
+
+<div class='row'>
+
+      <div class="input-field col s6">
+	<i class="material-icons prefix">account_circle</i>
+	<label for='uname'>username</label>
+	<input placeholder="username" id='uname' type="text" ng-model="new_friend.username">
+	      </div>
+
+   <div class="input-field col s6">
+   	<i class="material-icons prefix">email</i>
+	<label for='uemail'>email</label>
+	<input placeholder="email" id='unemail' type="text" ng-model="new_friend.email">
+</div>
+
+   <div class="input-field col s6">
+   	<i class="material-icons prefix">domain</i>
+	<label for='uaddress'>address</label>
+	<input placeholder="address" id='uaddress' type="text" ng-model="new_friend.address"></div>
+
+   <div class="input-field col s6">
+   	<i class="material-icons prefix">contact_phone</i>
+	<label for='uphone'>phone number</label>
+	<input placeholder="phone number" id='uphone' type="text" ng-model="new_friend.number">
+</div>
+
+   <div class="input-field col s6">
+	<i class="material-icons prefix">lock</i>
+	<label for='upass'>password</label>
+	<input placeholder="password" id='upass' type="password" ng-model="new_friend.password">
+</div>
+
+   <div class="input-field col s6">
+	<i class="material-icons prefix">lock</i>
+	<label for='upass'>confirm password</label>
+	<input placeholder="confirm password" id='upass' type="password" ng-model="new_friend.password2">
+</div>
+
+   <div class="input-field col s6">
+	<button ng-click="register()" class="btn waves-effect waves-light green" type="submit" name="action">Register
+	<i class="material-icons left">send</i></button>
+</div>
+
+</div>
+
+
+
+<div>	 

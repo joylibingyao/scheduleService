@@ -1,0 +1,51 @@
+	<!-- for calendar library -->
+	<link href='../calendar_files/fullcalendar.css' rel='stylesheet' />
+	<link href='../calendar_files/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<script src='../calendar_files/lib/moment.min.js'></script>
+	<script src='../calendar_files/lib/jquery.min.js'></script>
+	<script src='../calendar_files/fullcalendar.min.js'></script>
+	<div ng-controller="Calendar" class="container-fluid">
+
+		<!-- calendar here -->
+		<div class="container">
+			<div class="row">
+				<h4>{{contractor.username}}'s Calendar</h4>
+				<a class="btn waves-effect waves-light green" href="#/add_appointment/{{contractor._id}}">Add Appointment</a>
+				<a class="btn waves-effect waves-light green" href="#/add_review/{{contractor._id}}">Add Review</a>
+			</div>
+			
+			<div id="calendar" class="row">
+				<!-- calendar area -->
+			</div>
+			<div id="all_appointments" class=" green lighten-5 row">
+		<h4>All Appointments</h4><br>
+		<div class="col s6">
+			<input type="text" class="form-control" placeholder='Type here to search...' ng-model="filter_appointments">
+		</div>
+		<table class='table table-hover'>
+			<thead>
+				<th>Name</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Service</th>
+				<th>Actions</th>
+				<th>Pay</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="appointment in appointments | filter: filter_appointments | orderBy: ['start_date', 'start_time']">
+					<td>{{appointment.contractor}}</td>
+					<td>{{appointment.start_date}}</td>
+					<td>{{appointment.start_time}}</td>
+					<td >{{appointment.reason}}</td>
+					<td ><button class="btn  light-green darken-1"ng-click="Delete(appointment)">Delete</button></td>
+					<td><button class="btn  light-green darken-1" href="#/pay">Pay</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		</div>
+	</div>
+
+
+
+

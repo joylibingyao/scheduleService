@@ -1,0 +1,43 @@
+<div ng-Controller="Search" class="container-fluid ">
+
+<!-- 	<div>
+<h3>Location: Enter Zipcode</h3>
+<input type="text">
+</div> -->
+<div class="row green lighten-5" id="serviceSearch">
+	<h3>Search Services</h3>
+	<div class="input-field col s6" id="search">
+		<i class="material-icons prefix">search</i>
+		<input id="search"type="text" class="form-control" placeholder='' ng-model="filter_service">
+
+		<label for='search'>Type here: </label>
+	</div>
+</div>
+<div class="row green lighten-5" id="services">
+	<table ng-model="searchService" class="col s6">
+		<thead>
+			<th>Available Services</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="service in global_services | filter: filter_service">
+				<td>{{service}}</td> 
+				<td><button onclick="Materialize.toast('Here is list available users =D', 4000)" class="btn waves-effect waves-light green" ng-click="searchUsers(service)">Select</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table ng-model="pick_contractor" class="col s6"> 
+		<thead>
+			<th>Available People For Selected Service</th>
+			<th>Average Rating</th>
+		</thead>
+		<tr ng-repeat="user in users">
+			<!-- should be username not you -->
+			<td onclick="Materialize.toast('Right On! Here is their schedule =D', 4000)" class="pick_contractor waves-effect waves-light" ng-click="getCalendar(user)"><img  class="" src="{{user.url}}"><i class="material-icons left">face</i>{{user.username}}</td>
+			<td>{{user.reviews.average_rating}}</td>
+			<!-- need to adjust the average rating part -->
+		</tr>
+	</table>
+</div>
+

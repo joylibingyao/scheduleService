@@ -1,0 +1,88 @@
+.ng-invalid {
+    color: red;
+}
+#calendar {
+	border-radius: 10px;
+	padding: 20px;
+
+	border: 1px solid gray;
+/*	width:700px;
+	height:600px;*/
+	display: inline-block;
+}
+#all_appointments,#addServices,#myServices, #reviews,#services,#serviceSearch,#allMyAppointments{
+	border-radius: 10px;
+	padding: 20px;
+	/*border: 1px solid gray; */
+}
+#addServices,#myServices{
+
+}
+img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+}
+   /* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #4caf50;
+  box-shadow: 0 1px 0 0 #4caf50;
+}
+/*-------------------*/
+/*#appointment_form {
+		border:4px gray solid;
+		border-radius: 10px;
+		padding:30px;
+		width:700px;
+	}
+#form {
+		border: 3px solid gray;
+		padding: 30px;
+		border-radius: 10px;
+		display: inline-block;
+	}
+#appointments_table {
+		width: 300px;
+		display: inline-block;
+		float:right;
+		margin-top: 30px;
+	}
+#add_appointment_button {
+	display: inline-block;
+	margin-left: 850px;
+}
+#services, #ppl {
+	border:2px gray solid;
+	border-radius: 10px;
+	margin:30px;
+	display: inline-block;
+	width:500px;
+	padding:50px;
+	padding-top: 10px;
+}*/
+/*#img {
+	height:200px;
+	width:150px;
+	border:2px solid gray;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+img{
+	height:100px;
+	width:100px;
+}
+#profile {
+	display: inline-block;
+	width:400px;
+	margin-left: 10px;
+}
+#profile_page{
+	margin-top: 40px;
+}*/
+/*img#profile_pic{
+	height: 50px;
+	width: 50px;
+
+}*/

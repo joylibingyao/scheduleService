@@ -1,0 +1,108 @@
+	<!-- for calendar library -->
+	<link href='../calendar_files/fullcalendar.css' rel='stylesheet' />
+	<link href='../calendar_files/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<script src='../calendar_files/lib/moment.min.js'></script>
+	<script src='../calendar_files/lib/jquery.min.js'></script>
+	<script src='../calendar_files/fullcalendar.min.js'></script>
+	<style type="text/css">
+	</style>
+<div ng-controller="FriendsController">
+<h1>profile</h1>
+<input type="filepicker-dragdrop" data-fp-apikey="AZA72L1ZKQFORPzNlGsKlz" ng-model="new_friend.url" ng-change="fpadd()">
+</div>
+<div ng-Controller="Profile">
+<!-- poping up  -->
+<!-- 	<div class="pop_up">
+		
+	</div> -->
+<!-- poping up  -->
+	<div id="profile_page">
+		<h2>Name: {{users.username}}</h2>
+		<img  class="responsive-img" src="{{users.url}}">
+	<div id="basic_info">
+		<h4>Your Basic Info</h4>
+		<p>Email: {{users.email}}</p>
+		<p>Address: {{users.address}}</p>
+		<p>Number: {{users.number}}</p>
+		<p>Details: {{users.details}}</p>
+	</div>
+	<div class="useCalendar col-lg-8 row">
+		<h4>Your Calendar</h4>
+		<div id="calendar">
+			<!-- calendar area -->
+		</div>
+	</div>
+
+	<div id="all_appointments" class=" green lighten-5 row">
+		<h4>All Appointments</h4><br>
+		<div class="col s6">
+			<input type="text" class="form-control" placeholder='Type here to search...' ng-model="filter_appointments">
+		</div>
+		<table class='table table-hover'>
+			<thead>
+				<th>Name</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Service</th>
+				<th>Actions</th>
+				<th>Pay</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="appointment in appointments | filter: filter_appointments | orderBy: ['start_date', 'start_time']">
+					<td>{{appointment.contractor}}</td>
+					<td>{{appointment.start_date}}</td>
+					<td>{{appointment.start_time}}</td>
+					<td >{{appointment.reason}}</td>
+					<td ><button class="btn  light-green darken-1"ng-click="Delete(appointment)">Delete</button></td>
+					<td><button class="btn  light-green darken-1" href="#/pay">Pay</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<div class="col s6 green lighten-5" id="addServices">
+			<form >
+				<h4>Add a Service:</h4> 
+				Servie: <input type="text" class="form-control" ng-model="profile.service">
+				Details: <textarea ng-model="profile.details" class="form-control materialize-textarea"></textarea><br><br>
+				<button class="btn  light-green darken-1" ng-click="addService()" >Add</button>
+			</form>
+		</div>
+		<div id="addServices" class="col s6 green lighten-5">
+			<div>
+				<h4>Your Services</h4>
+				<table class='table table-hover'>
+					<thead>
+						<th>Service</th>
+						<th>Description</th>
+					</thead>
+					<tbody>
+						<tr ng-repeat="service in services_list | orderBy: ['start_date', 'start_time']">
+							<td>{{service.service}}</td>
+							<td>{{service.details}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="reviews" class="green lighten-5 row">
+		<h4>Your Reviews</h4>
+		<table class='table table-hover'>
+			<thead>
+				<th>Review</th>
+				<th>Rating</th>
+				<th>Date</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="review in reviews | orderBy: 'created_at'">
+					<td>{{review.review}}</td>
+					<td>{{review.rating}}</td>
+					<td ng-bind="review.created_at | date: 'longDate'"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+<script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>

@@ -18,8 +18,8 @@ var UserSchema = new mongoose.Schema({
 	facebookemail: String, 
 	facebookname: String,
 	
-
-	// hidden: Boolean,
+	aveRating:{type:Number,default:0},
+	
 	appointments: [{ //hiring someone else
 		contractor: String, //pulled from scope database
 		start_date: String,
@@ -29,6 +29,7 @@ var UserSchema = new mongoose.Schema({
 		reason: String,
 		payment: String,
 		directions: String,
+		paid:{type: Boolean,default:false},
 		created_at: { type: Date, default: Date.now }
 	}],
 	services: [{ //appointments you are doing for someone else

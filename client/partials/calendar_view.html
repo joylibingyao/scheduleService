@@ -18,7 +18,7 @@
 				<!-- calendar area -->
 			</div>
 			<div id="all_appointments" class=" green lighten-5 row">
-		<h4>All Appointments</h4><br>
+		<h4>All My Appointments</h4><br>
 		<div class="col s6">
 			<input type="text" class="form-control" placeholder='Type here to search...' ng-model="filter_appointments">
 		</div>
@@ -38,7 +38,7 @@
 					<td>{{appointment.start_time}}</td>
 					<td >{{appointment.reason}}</td>
 					<td ><button class="btn  light-green darken-1"ng-click="Delete(appointment)">Delete</button></td>
-					<td><button class="btn  light-green darken-1" href="#/pay">Pay</button></td>
+					<td><a class="btn light-green darken-1" ng-click="Pay(appointment)" href="#/pay">Pay</a></td>
 				</tr>
 			</tbody>
 		</table>

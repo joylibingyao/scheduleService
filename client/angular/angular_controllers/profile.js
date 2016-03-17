@@ -1,5 +1,5 @@
 // Profile controller
-appointments.controller('Profile', function($rootScope,$rootScope,$scope, $http, $routeParams, $location, ProfileFactory){
+appointments.controller('Profile', function($rootScope,$rootScope,$scope, $http, $routeParams, $location, ProfileFactory,CalendarFactory){
 	user_id = $rootScope.users._id;
 	// console.log();
 	// console.log('root user', $rootScope.users);
@@ -123,6 +123,14 @@ for (var i = data.url.length-1; i >= data.url.length-55; i--) {
 		});
 		$scope.profile={};
 	};
+	$scope.Delete = function(appointment){
+		// console.log(appointment);
+		CalendarFactory.Delete(appointment, user_id, function(data){
+			CalendarFactory.getAppointments(user_id, function(data){
+				$scope.appointments = data;
+			});
+		});
+	}
 
 });
 

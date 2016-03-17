@@ -41,7 +41,12 @@ var users = require('./../server/controllers/users.js');
       users.get_contractor(req.params, res);
     });
     app.get('/delete_appointment/:user_id/:id', function(req, res) {
+      console.log('delete this');
       users.delete_appointment(req.params, res);
+    });
+    app.get('/pay_appointment/:user_id/:id', function(req, res) {
+
+      users.pay_appointment(req.params, res);
     });
     app.get('/get_appointments/:id', function(req, res) {
       users.get_appointments(req.params, res);

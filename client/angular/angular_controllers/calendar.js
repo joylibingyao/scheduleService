@@ -49,4 +49,13 @@ appointments.controller('Calendar', function($rootScope,$scope, $routeParams, $l
 			});
 		});
 	}
+
+	$scope.Pay = function(appointment){
+		// console.log(appointment);
+		CalendarFactory.Pay(appointment, user_id, function(data){
+			CalendarFactory.getAppointments(user_id, function(data){
+				$scope.appointments = data;
+			});
+		});
+	}
 });

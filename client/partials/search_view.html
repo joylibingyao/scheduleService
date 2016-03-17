@@ -29,13 +29,13 @@
 
 	<table ng-model="pick_contractor" class="col s6"> 
 		<thead>
-			<th>Available People For Selected Service</th>
-			<th>Average Rating</th>
+			<th>Available People For The Service</th>
+			<th> Rating</th>
 		</thead>
 		<tr ng-repeat="user in users">
 			<!-- should be username not you -->
 			<td onclick="Materialize.toast('Right On! Here is their schedule =D', 4000)" class="pick_contractor waves-effect waves-light" ng-click="getCalendar(user)"><img  class="" src="{{user.url}}"><i class="material-icons left">face</i>{{user.username}}</td>
-			<td>{{user.reviews.average_rating}}</td>
+			<td>{{user.aveRating}}</td>
 			<!-- need to adjust the average rating part -->
 		</tr>
 	</table>

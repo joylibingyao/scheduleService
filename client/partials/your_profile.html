@@ -7,7 +7,7 @@
 	<style type="text/css">
 	</style>
 <div ng-controller="FriendsController">
-<h1>profile</h1>
+<h1>Hi {{users.username}} </h1>
 <input type="filepicker-dragdrop" data-fp-apikey="AZA72L1ZKQFORPzNlGsKlz" ng-model="new_friend.url" ng-change="fpadd()">
 </div>
 <div ng-Controller="Profile">
@@ -17,8 +17,7 @@
 	</div> -->
 <!-- poping up  -->
 	<div id="profile_page">
-		<h2>Name: {{users.username}}</h2>
-		<img  class="responsive-img" src="{{users.url}}">
+		<img  src="{{users.url}}">
 	<div id="basic_info">
 		<h4>Your Basic Info</h4>
 		<p>Email: {{users.email}}</p>
@@ -54,7 +53,7 @@
 					<td>{{appointment.start_time}}</td>
 					<td >{{appointment.reason}}</td>
 					<td ><button class="btn  light-green darken-1"ng-click="Delete(appointment)">Delete</button></td>
-					<td><button class="btn  light-green darken-1" href="#/pay">Pay</button></td>
+					<td><a class="btn light-green darken-1" ng-click="Pay(appointment)" href="#/pay">Pay</a></td>
 				</tr>
 			</tbody>
 		</table>

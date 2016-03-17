@@ -53,7 +53,6 @@ appointments.controller('Search', function($scope, $location, SearchFactory){
 	}
 
 	$scope.getCalendar = function(user){
-		console.log(user);
 		$location.path('/calendar/'+user._id);
 	}
 

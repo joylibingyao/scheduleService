@@ -2,10 +2,8 @@
 appointments.controller('Appointment', function($rootScope,$scope, $routeParams, $location, AppointmentFactory){
 
 	id=$routeParams.id;
-	console.log("BRIANS ID", id);
 
 	$scope.Choose = function(reason){
-		console.log(reason);
 		$scope.appointment.reason = reason;
 	}
 
@@ -30,11 +28,8 @@ appointments.controller('Appointment', function($rootScope,$scope, $routeParams,
 	});
 
 	$scope.addAppointment = function(){
-		console.log($scope.appointment.reason);
 		appointment = $scope.appointment;
 		console.log(appointment);
-
-
 		appointment.username = $rootScope.users.username;
 		appointment.contractor =$scope.contractor_name;
 		//-------------------------------------------//

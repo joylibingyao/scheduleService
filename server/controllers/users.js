@@ -72,6 +72,7 @@ return{
 		// console.log(req.you);
 		//this should be the id for the user/customer
 		var query = { username:req.username };
+		console.log("this is requ ",req);
 		var new_appointment = {
 			contractor: req.contractor,
 			start_date: req.start_date,
@@ -81,7 +82,8 @@ return{
 			reason: req.reason,
 			payment: req.payment,
 			directions: req.directions,
-			created_at: new Date()
+			created_at: new Date(),
+			paid:false
 		}
 		User.update(query, { $addToSet : { appointments : new_appointment }}, function(err, status){
 			if(err){
@@ -191,6 +193,30 @@ return{
 							// })
 						}
 					});
+				}
+			}
+		})
+	},
+	pay_appointment: function(req, res){
+		// remove appointment from user in appointment array
+		User.find({ _id: req.user_id}, function(err, results){
+			for(var i=0; i<results[0].appointments.length; i++) {
+				if(req.id == results[0].appointments[i]._id) {
+					// console.log("New appointments after deletion", newAppointments);
+					// User.update({ _id : req.user_id }, {$set: {appointments: newAppointments}}, function(err, results){
+					// 	if(err){
+					// 		res.send(err);
+					// 	} else {
+					// 		// remove service from contractors service array
+					// 		// User.update({ _id:req.contractor.id}, function(err, results){
+					// 			if(err){
+					// 				res.send(err);
+					// 			} else{
+					// 				res.json(results);
+					// 			}
+					// 		// })
+					// 	}
+					// });
 				}
 			}
 		})

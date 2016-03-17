@@ -1,6 +1,11 @@
 .ng-invalid {
     color: red;
 }
+#line{
+	height: 2px;
+	/*width: 100px;*/
+	/*text-align: center;*/
+}
 #calendar {
 	border-radius: 10px;
 	padding: 20px;
@@ -10,7 +15,7 @@
 	height:600px;*/
 	display: inline-block;
 }
-#all_appointments,#addServices,#myServices, #reviews,#services,#serviceSearch,#allMyAppointments{
+#fbLogin,#loLogin,#all_appointments,#addServices,#myServices, #reviews,#services,#serviceSearch,#allMyAppointments{
 	border-radius: 10px;
 	padding: 20px;
 	/*border: 1px solid gray; */

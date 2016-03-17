@@ -34,7 +34,7 @@
 		</thead>
 		<tr ng-repeat="user in users">
 			<!-- should be username not you -->
-			<td onclick="Materialize.toast('Right On! Here is their schedule =D', 4000)" class="pick_contractor waves-effect waves-light" ng-click="getCalendar(user)"><img  class="" src="{{user.url}}"><i class="material-icons left">face</i>{{user.username}}</td>
+			<td onclick="Materialize.toast('Right On! Here is their schedule =D', 4000)" class="pick_contractor waves-effect waves-light " ng-click="getCalendar(user)"><img  class="" src="{{user.url}}"><i class="material-icons left">face</i>{{user.username}}</td>
 			<td>{{user.aveRating}}</td>
 			<!-- need to adjust the average rating part -->
 		</tr>

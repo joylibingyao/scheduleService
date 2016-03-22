@@ -16,7 +16,6 @@ appointments.controller('Profile', function($rootScope,$rootScope,$scope, $http,
 		}
 		$rootScope.users = data;
 		$rootScope.users.url = url;
-		console.log(url);
 	});
 
 	//GETTING SERVICE LIST to display on profile page

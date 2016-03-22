@@ -32,8 +32,8 @@
 			<tbody>
 				<tr ng-repeat="appointment in appointments | filter: filter_appointments | orderBy: ['start_date', 'start_time']">
 					<td>{{appointment.contractor}}</td>
-					<td>{{appointment.start_date}}</td>
-					<td>{{appointment.start_time}}</td>
+					<td ng-bind="appointment.start_date| date: 'longDate'"></td>
+					<td ng-bind="appointment.end_date| date: 'longDate'"></td>
 					<td >{{appointment.reason}}</td>
 				</tr>
 			</tbody>

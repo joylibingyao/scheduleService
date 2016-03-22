@@ -57,7 +57,6 @@ appointments.factory('CalendarFactory', function($http){
       var id = appointment._id;
       // console.log('im in factory');
       $http.get("/pay_appointment/" + user_id +"/"+ id).success(function(output){
-      	console.log("factory", output);
         	callback(output);
       })
     };
@@ -150,10 +149,7 @@ appointments.factory('SearchFactory', function($http){
 //Review factory
 appointments.factory('ReviewFactory', function($http){
 	var factory = {};
-	var reviews = $rootScope.users.reviews;
-	console.log(reviews);
-
-	factory.addReview = function(review, callback){
+	factory.addReview = function(review,customer_id, callback){
 		// console.log(review);
 		$http.post('/add_review', review).success(function(output){
 			callback(output);

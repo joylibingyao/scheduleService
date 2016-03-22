@@ -6,6 +6,7 @@
 </div> -->
 <div class="row green lighten-5" id="serviceSearch">
 	<h3>Search Services</h3>
+	<p>Type the service that you are looking for</p>
 	<div class="input-field col s6" id="search">
 		<i class="material-icons prefix">search</i>
 		<input id="search"type="text" class="form-control" placeholder='' ng-model="filter_service">
@@ -14,6 +15,7 @@
 	</div>
 </div>
 <div class="row green lighten-5" id="services">
+	<p>Click "SELECT" to get avaliable people for that service</p>
 	<table ng-model="searchService" class="col s6">
 		<thead>
 			<th>Available Services</th>
@@ -29,13 +31,13 @@
 
 	<table ng-model="pick_contractor" class="col s6"> 
 		<thead>
-			<th>Available People For The Service</th>
+			<th>People For The Service</th>
 			<th> Rating</th>
 		</thead>
 		<tr ng-repeat="user in users">
 			<!-- should be username not you -->
 			<td onclick="Materialize.toast('Right On! Here is his schedule =D', 4000)" class="pick_contractor waves-effect waves-light " ng-click="getCalendar(user)"><img  class="" src="{{user.url}}"><i class="material-icons left">face</i>{{user.username}}</td>
-			<td>{{user.aveRating}}</td>
+			<td>{{user.aveRating.toFixed(2)}}</td>
 			<!-- need to adjust the average rating part -->
 		</tr>
 	</table>

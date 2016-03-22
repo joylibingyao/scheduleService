@@ -24,6 +24,7 @@
 		<p>Address: {{users.address}}</p>
 		<p>Number: {{users.number}}</p>
 		<p>Details: {{users.details}}</p>
+		<p>Average Rating: {{users.aveRating.toFixed(2)}}</p>
 	</div>
 	<div class="useCalendar col-lg-8 row">
 		<h4>Your Calendar</h4>
@@ -43,21 +44,24 @@
 				<th>Start Time</th>
 				<th>End Time</th>
 				<th>Service</th>
+				<th>Directions</th>
 				<th>Actions</th>
 				<th></th>
 			</thead>
 			<tbody>
 				<tr ng-repeat="appointment in appointments | filter: filter_appointments | orderBy: ['start_date', 'start_time']">
 					<td>{{appointment.contractor}}</td>
-					<td>{{appointment.start_date}}</td>
-					<td>{{appointment.end_date}}</td>
+					<td ng-bind="appointment.start_date| date: 'longDate'"></td>
+					<td ng-bind="appointment.end_date| date: 'longDate'"></td>
 					<td >{{appointment.reason}}</td>
+					<td ng-bind="appointment.directions"></td>
 					<td ><button class="btn  light-green darken-1"ng-click="Delete(appointment)">Delete</button></td>
 					<td><button class="btn light-green darken-1" ng-click="pay(appointment)">Pay</button></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+
 	<div class="row">
 		<div class="col s6 green lighten-5" id="addServices">
 			<form >

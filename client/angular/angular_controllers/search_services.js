@@ -22,24 +22,6 @@ appointments.controller('Search', function($scope, $location, SearchFactory){
 		$scope.global_services = global_services;
 		// console.log($scope.global_services);
 	});
-	// SearchFactory.getGlobalContractors(function(data){
-	// 	function inArray(value, array){
-	// 	    for(var i=0;i<array.length;i++){
-	// 	        if(array[i]==value) {return false;}
-	// 	    }
-	// 	}
-
-	// 	var global_services = [];
-	// 	for(user in data){
-	// 		for(resume in data[user].resume){
-	// 			if (inArray(data[user].resume[resume].service, global_services) != false){
-	// 				global_contractors.push(data[user].resume[resume].service);
-	// 			}
-	// 		}
-	// 	}
-	// 	$scope.global_contractors = global_contractors;
-	// 	// console.log($scope.global_services);
-	// });
 
 	$scope.searchUsers = function(selected_service){
 		// console.log(service);

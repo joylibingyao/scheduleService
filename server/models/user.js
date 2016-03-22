@@ -18,7 +18,7 @@ var UserSchema = new mongoose.Schema({
 	facebookemail: String, 
 	facebookname: String,
 	
-	aveRating:{type:Number,default:0},
+	aveRating:{type:Number,default:0.0},
 	
 	appointments: [{ //hiring someone else
 		contractor: String, //pulled from scope database
@@ -28,7 +28,7 @@ var UserSchema = new mongoose.Schema({
 		end_time: String,
 		reason: String,
 		payment: String,
-		directions: String,
+		directions:{type: String,default:" "},
 		paid:{type: Boolean,default:false},
 		created_at: { type: Date, default: Date.now }
 	}],
@@ -48,8 +48,9 @@ var UserSchema = new mongoose.Schema({
 		details: String
 	}],
 	reviews: [{
-		review: String,
+		review: {type:String, default:"Awesome"},
 		rating: Number,
+		customer:{type:String,default:"😊"},
 		created_at: {type: Date, default: Date.now}
 	}]
 });

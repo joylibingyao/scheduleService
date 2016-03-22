@@ -152,10 +152,9 @@ angular.module('angularPayments', []);angular.module('angularPayments')
       defaultInputFormat: function() { return defaultInputFormat;}
   }
 
-}]);angular.module('angularPayments')
+}]);
 
-
-.factory('_Format',['Cards', 'Common', '$filter', function(Cards, Common, $filter){
+angular.module('angularPayments').factory('_Format',['Cards', 'Common', '$filter', function(Cards, Common, $filter){
 
   var _formats = {}
 

@@ -129,22 +129,56 @@ return{
 	},
 
 	add_review: function(req, res){
-		console.log(req);
+		var ave_rates =0;
 		var query = { _id :  req._id };
 		var add_review = {
 			review: req.review,
 			rating: req.rating
 		};
-		console.log(add_review);
-		User.update(query, { $addToSet : { reviews : add_review }}, function(err, status){
-			if(err){
-				// console.log('error');
-				res.send(err);
-			} else {
-				// console.log('yes');
-				res.json(status);
+
+		User.find({ _id: req._id }, function(err, results){
+			user = results[0];
+			var reviews= user.reviews;
+			for(var i=0; i<reviews.length; i++) {
+				ave_rates+=reviews[i].rating		
 			}
-		});
+			ave_rates = ave_rates/(reviews.length)
+			user.aveRating = ave_rates
+
+			console.log(ave_rates);
+			
+			user.reviews.push(add_review);
+
+			user.save(function (err) {
+		        if(err) {
+		            console.error('ERROR!');
+		        }
+		    });
+			if(err){
+					res.send(err);
+				} else {
+					res.json(results);
+				}
+
+			// User.update(query, { $addToSet : { reviews : add_review }}, function(err, status){
+			// 	if(err){
+			// 		// console.log('error');
+			// 		res.send(err);
+			// 	} else {
+			// 		res.json(status);
+			// 	}
+			// });
+					
+			
+		})
+		// User.update(query, { $addToSet : { reviews : add_review }}, function(err, status){
+		// 	if(err){
+		// 		// console.log('error');
+		// 		res.send(err);
+		// 	} else {
+		// 		res.json(status);
+		// 	}
+		// });
 	},
 
 	// //getting specific contractor

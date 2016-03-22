@@ -192,8 +192,6 @@ app.get('/showimg', function(req, res) {
 });
 // add a link to the list
 app.post('/uploadimg', function(req, res) {
-	console.log(req.body, "req.body");
-	console.log(req.body.id,"user _id");
   // var newUrl = new UserModel(req.body);
   // newUrl.save(function(err) {
 

@@ -29,7 +29,6 @@ appointments.controller('Appointment', function($rootScope,$scope, $routeParams,
 
 	$scope.addAppointment = function(){
 		appointment = $scope.appointment;
-		console.log(appointment);
 		appointment.username = $rootScope.users.username;
 		appointment.contractor =$scope.contractor_name;
 		//-------------------------------------------//

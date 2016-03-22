@@ -9,7 +9,7 @@ appointments.config(function($routeProvider){
 	.when('/your_profile',{ templateUrl: 'partials/your_profile.html' })
 	.when('/register',{ templateUrl: 'partials/register.html' })
 	.when('/search', { templateUrl: "partials/search_view.html"})
-	.when('/pay', { templateUrl: "partials/pay_page.html"})
+	.when('/pay/:id', { templateUrl: "partials/pay_page.html"})
 	.when('/add_appointment/:id', { templateUrl: "partials/add_appointment.html"})
 	.when('/calendar/:id', { templateUrl: "partials/calendar_view.html"})
 	.when('/add_review/:id', { templateUrl: "partials/add_review.html"})

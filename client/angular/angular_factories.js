@@ -68,6 +68,7 @@ appointments.factory('CalendarFactory', function($http){
 // Profile factory
 appointments.factory('ProfileFactory', function($http){
 	var factory = {};
+	var payInfo;
 	//if there are errors-- add to message within the object
 	// var errors = {message: ''};
 
@@ -113,6 +114,13 @@ appointments.factory('ProfileFactory', function($http){
 			// console.log(users.url);
 			callback(users);
 		});
+	}
+	factory.pay = function(app, user_id){
+		payInfo = app;
+		
+	}
+	factory.getPayInfo = function(){
+		return payInfo;
 	}
 
 	return factory;

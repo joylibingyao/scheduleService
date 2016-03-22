@@ -3,7 +3,24 @@
 <h3 class="center">Payment
 </h3>
 <div id="paymentInfo" class="row">
-  
+  <h5>Appointment Info</h5>
+  <table class='table table-hover'>
+      <thead>
+        <th>Contractor</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Service</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{payInfo.contractor}}</td>
+          <td>{{payInfo.start_date}}</td>
+          <td>{{payInfo.end_date}}</td>
+          <td >{{payInfo.reason}}</td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 <div class="row">
   <form class="col s12" stripe-form="stripeCallback" name="checkoutForm">

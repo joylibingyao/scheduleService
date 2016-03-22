@@ -33,7 +33,7 @@ appointments.controller('Calendar', function($rootScope,$scope, $routeParams, $l
 					center: 'title',
 					right: 'month,basicWeek,basicDay'
 				},
-				defaultDate: '2015-07-01',
+				defaultDate: '2016-03-16',
 				editable: true,
 				eventLimit: true, // allow "more" link when too many events
 				events: events

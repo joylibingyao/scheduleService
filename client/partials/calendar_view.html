@@ -24,12 +24,10 @@
 		</div>
 		<table class='table table-hover'>
 			<thead>
-				<th>Name</th>
+				<th>Contractor</th>
 				<th>Start Time</th>
 				<th>End Time</th>
 				<th>Service</th>
-				<th>Actions</th>
-				<th>Pay</th>
 			</thead>
 			<tbody>
 				<tr ng-repeat="appointment in appointments | filter: filter_appointments | orderBy: ['start_date', 'start_time']">
@@ -37,8 +35,6 @@
 					<td>{{appointment.start_date}}</td>
 					<td>{{appointment.start_time}}</td>
 					<td >{{appointment.reason}}</td>
-					<td ><button class="btn  light-green darken-1"ng-click="Delete(appointment)">Delete</button></td>
-					<td><a class="btn light-green darken-1" ng-click="Pay(appointment)" href="#/pay">Pay</a></td>
 				</tr>
 			</tbody>
 		</table>

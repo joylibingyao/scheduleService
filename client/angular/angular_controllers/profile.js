@@ -10,16 +10,12 @@ appointments.controller('Profile', function($rootScope,$rootScope,$scope, $http,
 
 
 	ProfileFactory.getUsers( user_id, function(data){
-		 // console.log(user_id);
-		
-		console.log(data.url);
-		console.log(data.url.length);
 		var url= "";
-for (var i = data.url.length-1; i >= data.url.length-55; i--) {
-	url=data.url[i]+url;
-}
-	$rootScope.users = data;
-	$rootScope.users.url = url;
+		for (var i = data.url.length-1; i >= data.url.length-55; i--) {
+			url=data.url[i]+url;
+		}
+		$rootScope.users = data;
+		$rootScope.users.url = url;
 		console.log(url);
 	});
 
@@ -131,7 +127,11 @@ for (var i = data.url.length-1; i >= data.url.length-55; i--) {
 			});
 		});
 	}
-
+	$scope.pay = function(appointment){
+		var appId=appointment._id;
+		ProfileFactory.pay(appointment, user_id);
+		$location.path('/pay/'+appId);
+	}
 });
 
 

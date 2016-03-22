@@ -1,5 +1,7 @@
-appointments.controller('payment',function($rootScope,$scope, $window, AppointmentFactory){
+appointments.controller('payment',function($rootScope,$scope, $window, AppointmentFactory,ProfileFactory){
 	$window.Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+	$scope.payInfo = ProfileFactory.getPayInfo();
+
 
 	$scope.stripeCallback = function (code, result) {
 
@@ -16,6 +18,8 @@ appointments.controller('payment',function($rootScope,$scope, $window, Appointme
 	        AppointmentFactory.charge(info);	
 		};
 	}
+
+	
 });
 
 

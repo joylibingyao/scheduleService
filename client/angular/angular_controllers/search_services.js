@@ -3,6 +3,7 @@ appointments.controller('Search', function($scope, $location, SearchFactory){
 	// $scope.id = '55b7e44eeef1f8661dc15b48';
 
 	//GETTING SERVICE LIST to display on profile page
+	$scope.users = {};
 	SearchFactory.getGlobalServices(function(data){
 		function inArray(value, array){
 		    for(var i=0;i<array.length;i++){
@@ -21,6 +22,24 @@ appointments.controller('Search', function($scope, $location, SearchFactory){
 		$scope.global_services = global_services;
 		// console.log($scope.global_services);
 	});
+	// SearchFactory.getGlobalContractors(function(data){
+	// 	function inArray(value, array){
+	// 	    for(var i=0;i<array.length;i++){
+	// 	        if(array[i]==value) {return false;}
+	// 	    }
+	// 	}
+
+	// 	var global_services = [];
+	// 	for(user in data){
+	// 		for(resume in data[user].resume){
+	// 			if (inArray(data[user].resume[resume].service, global_services) != false){
+	// 				global_contractors.push(data[user].resume[resume].service);
+	// 			}
+	// 		}
+	// 	}
+	// 	$scope.global_contractors = global_contractors;
+	// 	// console.log($scope.global_services);
+	// });
 
 	$scope.searchUsers = function(selected_service){
 		// console.log(service);
@@ -39,6 +58,13 @@ appointments.controller('Search', function($scope, $location, SearchFactory){
 					if(data[user].resume[service].service == selected_service){
 						//should be username not you
 						if(inArray(data[user], users) != false){
+							// data[user.url]
+							console.log(data[user].url);
+							var url= "";
+							for (var i = data[user].url.length-1; i >= data[user].url.length-55; i--) {
+								url=data[user].url[i]+url;
+							}
+							data[user].url = url;
 							users.push(data[user]);
 						}
 					}

@@ -199,7 +199,7 @@ app.post('/uploadimg', function(req, res) {
 
   	// console.log(req.body.id+" body_id");
   	// console.log(req.body.url+" body_data");
-  	UserModel.update({_id:req.body.id },{$addToSet:{url:req.body.url}},function(err){
+  	UserModel.update({_id:req.body.id },{url:req.body.url},function(err){
   		//console.log('updating');
   		if(err){
   			res.send('error is here');
